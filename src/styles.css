@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+body { margin: 0; }
+
+.mat-tab-labels {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-toolbar-row {
+    justify-content: center;
+}
+
+.mat-grid-tile {
+  height: 30%;
+  width: 40%;
+}
+
+.match-card {
+  max-width: 300px;
+  max-height: 250px;
+}
+
+.germany-image {
+  background-image: url('src/assets/germany.png');
+  background-size: cover;
+}
+
+.brazil-image {
+  background-image: url('src/assets/brazil.png');
+  background-size: cover;
+}
+
+.inline-content {
+    display: inline-block;
+}
+
+ul.matches li {
+    width: 300px;
+    display: inline-block;
+     /*padding-right: 2em;
+     padding-bottom: 2em;
+     padding-top: 2em;
+     padding-left: 2em;*/
+    box-sizing: border-box;
+    vertical-align: top;
+    *display: inline; 
+    *zoom: 1;
+}
+
+.match{
+    position: relative;
+}
