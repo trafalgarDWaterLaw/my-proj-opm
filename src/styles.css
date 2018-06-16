@@ -21,13 +21,196 @@ body { margin: 0; }
   max-height: 250px;
 }
 
-.germany-image {
-  background-image: url('src/assets/germany.png');
+.match-card-live {
+  max-width: 300px;
+  max-height: 250px;
+  background-color: lightgreen;
+}
+
+.match-card-result {
+  max-width: 300px;
+  max-height: 250px;
+  background-color: grey;
+}
+
+.match-card-watch {
+  max-width: 300px;
+  max-height: 250px;
+  background-color: lightblue;
+}
+
+.mat-list {
+        height: 400px;
+}
+.mat-list-item {
+        height: 400px;
+}
+table {
+  width: 100%;
+  height: 100%;
+}
+
+.worldCup {
+  background-image: url('src/assets/worldCup.png');
+  background-size: cover;
+}
+.Germany {
+  background-image: url('src/assets/Germany.png');
   background-size: cover;
 }
 
-.brazil-image {
-  background-image: url('src/assets/brazil.png');
+.Brazil {
+  background-image: url('src/assets/Brazil.png');
+  background-size: cover;
+}
+
+.Argentina {
+  background-image: url('src/assets/Argentina.png');
+  background-size: cover;
+}
+
+.Australia {
+  background-image: url('src/assets/Australia.png');
+  background-size: cover;
+}
+
+.Belgium {
+  background-image: url('src/assets/Belgium.png');
+  background-size: cover;
+}
+
+.Colombia {
+  background-image: url('src/assets/Colombia.png');
+  background-size: cover;
+}
+
+.Costa {
+  background-image: url('src/assets/Costa.png');
+  background-size: cover;
+}
+
+.Croatia {
+  background-image: url('src/assets/Croatia.png');
+  background-size: cover;
+}
+
+.Denmark {
+  background-image: url('src/assets/Denmark.png');
+  background-size: cover;
+}
+
+.Egypt {
+  background-image: url('src/assets/Egypt.png');
+  background-size: cover;
+}
+
+.England {
+  background-image: url('src/assets/England.png');
+  background-size: cover;
+}
+
+.France {
+  background-image: url('src/assets/France.png');
+  background-size: cover;
+}
+
+.Iceland {
+  background-image: url('src/assets/Iceland.png');
+  background-size: cover;
+}
+
+.Iran {
+  background-image: url('src/assets/Iran.png');
+  background-size: cover;
+}
+
+.Japan {
+  background-image: url('src/assets/Japan.png');
+  background-size: cover;
+}
+
+.Mexico {
+  background-image: url('src/assets/Mexico.png');
+  background-size: cover;
+}
+
+.Morocco {
+  background-image: url('src/assets/Morocco.png');
+  background-size: cover;
+}
+
+.Nigeria {
+  background-image: url('src/assets/Nigeria.png');
+  background-size: cover;
+}
+
+.Panama {
+  background-image: url('src/assets/Panama.png');
+  background-size: cover;
+}
+
+.Peru {
+  background-image: url('src/assets/Peru.png');
+  background-size: cover;
+}
+
+.Poland {
+  background-image: url('src/assets/Poland.png');
+  background-size: cover;
+}
+
+.Portugal {
+  background-image: url('src/assets/Portugal.png');
+  background-size: cover;
+}
+
+.Russia {
+  background-image: url('src/assets/Russia.png');
+  background-size: cover;
+}
+
+.Saudi {
+  background-image: url('src/assets/Saudi.png');
+  background-size: cover;
+}
+
+.Senegal {
+  background-image: url('src/assets/Senegal.png');
+  background-size: cover;
+}
+
+.Serbia {
+  background-image: url('src/assets/Serbia.png');
+  background-size: cover;
+}
+
+.South {
+  background-image: url('src/assets/South.png');
+  background-size: cover;
+}
+
+.Spain {
+  background-image: url('src/assets/Spain.png');
+  background-size: cover;
+}
+
+.Sweden {
+  background-image: url('src/assets/Sweden.png');
+  background-size: cover;
+}
+
+.Switzerland {
+  background-image: url('src/assets/Switzerland.png');
+  background-size: cover;
+}
+
+.Tunisia {
+  background-image: url('src/assets/Tunisia.png');
+  background-size: cover;
+}
+
+.Uruguay {
+  background-image: url('src/assets/Uruguay.png');
   background-size: cover;
 }
 
@@ -51,3 +234,7 @@ ul.matches li {
 .match{
     position: relative;
 }
+
+/*.mat-tab-body-content .ng-trigger .ng-trigger-translateTab {
+    justify-content: center;
+}*/

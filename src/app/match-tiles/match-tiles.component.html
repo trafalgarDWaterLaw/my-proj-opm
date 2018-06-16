@@ -5,225 +5,36 @@
       <mat-grid-tile colspan="1" rowspan="1" color="lightblue">4</mat-grid-tile>
 </mat-grid-list>-->
 <ul class="matches">
-  <li class="match">
-    <mat-card class="match-card">
+  <li class="match" *ngFor="let match of matchRes">
+    <mat-card [className]="match.matchClass">
       <mat-card-header>
         <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
+        <mat-card-subtitle>Group {{match.team1.group}}</mat-card-subtitle>
       </mat-card-header>
       <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
+        <span><div class="{{match.team1.name}} mat-card-avatar" ></div>{{match.team1.name}}</span>
         <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
+        <span><div class="{{match.team2.name}} mat-card-avatar"></div>{{match.team2.name}}</span>
       </div>
 
       <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
+        <p *ngIf="match.result === 'WON' || match.result === 'DRAW' || match.result === 'LOST'">
+          {{match.score1}} - {{match.score2}}
+        </p>
+        <p *ngIf="match.result === 'LIVE'">
+          {{match.score1}} - {{match.score2}}
+        </p>
+        <p *ngIf="!match.result">
+          {{match.gametime | amLocale:'en' | amDateFormat: 'MMMM Do YYYY, h:mm a'}}
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>Watch out</button>
+        <button *ngIf="!match.result" mat-button (click)="addToWatchList(match.id)">Watch out</button>
+        <button *ngIf="match.result === 'LIVE'" mat-button>LIVE</button>
+        
+        <button *ngIf="(match.result === 'WON' || match.result === 'DRAW' || match.result === 'LOST')" mat-button>{{match.resultText}}</button>
         <!--<mat-icon class="mat-icon-rtl-mirror" svgIcon="thumb-up"></mat-icon>-->
         <!--<button mat-button>Ok</button>-->
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
-      </mat-card-actions>
-    </mat-card>
-  </li>
-  <li class="match">
-    <mat-card class="match-card">
-      <mat-card-header>
-        <mat-card-title>Matchday 1 of 3</mat-card-title>
-        <mat-card-subtitle>Group A</mat-card-subtitle>
-      </mat-card-header>
-      <div class="inline-content">
-        <span><div mat-card-avatar class="germany-image"></div> Germany</span>
-        <div>vs</div>
-        <span><div mat-card-avatar class="brazil-image"></div>Brazil</span>
-      </div>
-
-      <mat-card-content>
-        <p>
-          Thu, 14/06, 8:30 PM
-        </p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Watch out</button>
       </mat-card-actions>
     </mat-card>
   </li>

@@ -111,25 +111,34 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {CommonModule} from '@angular/common';
+import { MomentModule } from 'ngx-moment';
+import { HttpModule } from '@angular/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActionsNavigationComponent } from './actions-navigation/actions-navigation.component';
+import { GroupStageComponent } from './group-stage/group-stage.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatchTilesComponent } from './match-tiles/match-tiles.component';
+import { AppCommonService } from './app.common.service';
+import 'moment/locale/de';
+//import { MatchService } from './match-tiles/match-tiles.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ActionsNavigationComponent,
-    MatchTilesComponent
+    MatchTilesComponent,
+    GroupStageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
-    MaterialModule
+    MaterialModule,
+    MomentModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [AppCommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
