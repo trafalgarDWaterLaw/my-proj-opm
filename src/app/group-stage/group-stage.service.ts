@@ -9,7 +9,7 @@ import { AppCommonService } from '../app.common.service';
     constructor( private http: Http, private _commonService: AppCommonService) {}
 
     groupTileData() {
-        const url = 'https://35.200.203.14/standing/';
+        const url = 'https://thecrossheader.com/standing/';
         const data$ = this._commonService.get(url)
                         .pipe(map(res => {
                             res = res._body;
